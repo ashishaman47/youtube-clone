@@ -1,0 +1,19 @@
+.recommendedVideos {
+  /* inside container only give weight of 80% --> so it will take 80% of page area*/
+  flex: 0.8;
+  /* border: 1px solid black; */
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  padding-bottom: 0;
+}
+
+.recommendedVideos > h2 {
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+
+.recommendedVideos__videos {
+  display: flex;
+  /* if the element doesn't fit to screen it moves to new line */
+  flex-wrap: wrap;
+}

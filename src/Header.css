@@ -1,0 +1,50 @@
+/* flexbox allows it look like this in a nice responsive and mobile friendly way*/
+.header {
+  display: flex;
+  align-items: center;
+  /* give proper space b/w the contents inside header */
+  justify-content: space-between;
+  padding: 20px;
+  /* making header stick to the top*/
+  position: sticky;
+  top: 0;
+  /* to make it come over other texts */
+  z-index: 100;
+  /* if we don't provide bg-color then it will be transparent */
+  background-color: white;
+}
+
+.header__logo {
+  height: 25px;
+  /* maintain the aspect ratio */
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+.header__input {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  border: 1px solid black;
+}
+
+.header__icon {
+  margin-right: 8px;
+}
+
+.header__input > input {
+  flex: 1;
+  border: none;
+}
+
+.header__inputButton {
+  width: 50px !important;
+  background-color: #f8f8f8;
+  border-left: 1px solid lightgray;
+  color: gray;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}

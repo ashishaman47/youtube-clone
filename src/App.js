@@ -1,24 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import RecommendedVideos from './RecommendedVideos';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import SearchPage from './SearchPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Router>
+        {/* Header */}
+        {/* if something is plced outside switch it always comes up */}
+        <Header />
+        <Switch>
+          {/* sending the search text to our URL */}
+          <Route path='/search/:searchTerm'>
+            <div className='app__page'>
+              {/* Sidebar --> 20% */}
+              <Sidebar />
+
+              {/* Recommended Videos --> 80% */}
+              <SearchPage />
+            </div>
+          </Route>
+          <Route path='/'>
+            <div className='app__page'>
+              {/* Sidebar --> 20% */}
+              <Sidebar />
+
+              {/* Recommended Videos --> 80% */}
+              <RecommendedVideos />
+            </div>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
